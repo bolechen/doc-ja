@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 76f8c0151d9a99d2f96e154da050e64305862b21 Maintainer: hirokawa Status: ready -->
+<!-- EN-Revision: f5da09b29868c155822672ed132aea70bce960a9 Maintainer: hirokawa Status: ready -->
 <!-- CREDITS: takagi -->
 <refentry xml:id="function.ldap-first-entry" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
@@ -35,7 +35,7 @@
      <term><parameter>ldap</parameter></term>
      <listitem>
       <para>
-       <function>ldap_connect</function> が返す LDAP リンク ID。
+       &ldap.parameter.ldap;
       </para>
      </listitem>
     </varlistentry>
@@ -43,6 +43,7 @@
      <term><parameter>result</parameter></term>
      <listitem>
       <para>
+       &ldap.parameter.result;
       </para>
      </listitem>
     </varlistentry>
@@ -53,8 +54,8 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   成功時に最初のエントリに関する結果エントリ ID、エラーの場合に &false;
-   を返します。
+   成功時に最初のエントリに関する結果エントリIDを返します。
+   &return.falseforfailure;
   </para>
  </refsect1>
 

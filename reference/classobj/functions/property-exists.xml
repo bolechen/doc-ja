@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 4754397753fd79f1c846868b66a2448babab1c54 Maintainer: shimooka Status: ready -->
+<!-- EN-Revision: 6846ebb4e33d51faee4a1e99c241a7a24861e0e4 Maintainer: shimooka Status: ready -->
 <!-- CREDITS: takagi,mumumu -->
 <refentry xml:id="function.property-exists" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
@@ -13,7 +13,7 @@
   &reftitle.description;
   <methodsynopsis>
    <type>bool</type><methodname>property_exists</methodname>
-   <methodparam><type>mixed</type><parameter>class</parameter></methodparam>
+   <methodparam><type class="union"><type>object</type><type>string</type></type><parameter>object_or_class</parameter></methodparam>
    <methodparam><type>string</type><parameter>property</parameter></methodparam>
   </methodsynopsis>
   <para>
@@ -33,7 +33,7 @@
   <para>
    <variablelist>
     <varlistentry>
-     <term><parameter>class</parameter></term>
+     <term><parameter>object_or_class</parameter></term>
       <listitem>
        <para>
         確認するクラス名、もしくはクラスのオブジェクトを指定します。
@@ -59,18 +59,6 @@
   </para>
  </refsect1>
 
- <refsect1 role="notes">
-  &reftitle.notes;
-  &note.uses-autoload;
-  <note>
-   <para>
-    <function>property_exists</function> 関数は、マジックメソッド <link
-    linkend="language.oop5.overloading.members"><literal>__get</literal></link>
-    を使ってアクセスするプロパティを検出することはできません。
-   </para>
-  </note>
- </refsect1>
-
  <refsect1 role="examples">
   &reftitle.examples;
   <para>
@@ -92,9 +80,9 @@ class myClass {
 
 var_dump(property_exists('myClass', 'mine'));   //true
 var_dump(property_exists(new myClass, 'mine')); //true
-var_dump(property_exists('myClass', 'xpto'));   //PHP 5.3.0 以降では true
+var_dump(property_exists('myClass', 'xpto'));   //true
 var_dump(property_exists('myClass', 'bar'));    //false
-var_dump(property_exists('myClass', 'test'));   //PHP 5.3.0 以降では true
+var_dump(property_exists('myClass', 'test'));   //true
 myClass::test();
 
 ?>
@@ -103,6 +91,19 @@ myClass::test();
    </example>
   </para>
  </refsect1>
+
+ <refsect1 role="notes">
+  &reftitle.notes;
+  &note.uses-autoload;
+  <note>
+   <para>
+    <function>property_exists</function> 関数は、マジックメソッド <link
+    linkend="language.oop5.overloading.members"><literal>__get</literal></link>
+    を使ってアクセスするプロパティを検出することはできません。
+   </para>
+  </note>
+ </refsect1>
+
  <refsect1 role="seealso">
   &reftitle.seealso;
   <para>
@@ -112,7 +113,6 @@ myClass::test();
   </para>
  </refsect1>
 </refentry>
-
 <!-- Keep this comment at the end of the file
 Local variables:
 mode: sgml

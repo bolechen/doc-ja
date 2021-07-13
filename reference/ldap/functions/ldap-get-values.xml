@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 76f8c0151d9a99d2f96e154da050e64305862b21 Maintainer: hirokawa Status: ready -->
+<!-- EN-Revision: 1f801a1187777ac1ec620e0a228d55e483f2757b Maintainer: hirokawa Status: ready -->
 <!-- CREDITS: takagi -->
 <refentry xml:id="function.ldap-get-values" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
@@ -20,8 +20,8 @@
    結果内のエントリ属性の、すべての値を読み込みます。
   </para>
   <para>
-   この関数のコールは、<parameter>entry</parameter>
-   を必要とします。このため、事前に LDAP の検索用関数のコールと個々の
+   この関数をコールするには、<parameter>entry</parameter>
+   が必要です。このため、事前に LDAP の検索用関数のコールと個々の
    エントリ取得用関数のコールを行っておく必要があります。
   </para>
   <para>
@@ -40,7 +40,7 @@
      <term><parameter>ldap</parameter></term>
      <listitem>
       <para>
-       <function>ldap_connect</function> が返す LDAP リンク ID。
+       &ldap.parameter.ldap;
       </para>
      </listitem>
     </varlistentry>

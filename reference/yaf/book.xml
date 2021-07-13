@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 8ecd1fe58af827dcdbab6a18e299a2e3fd1d01b8 Maintainer: takagi Status: ready -->
+<!-- EN-Revision: 68c2c871505aadf983f16113c5b077b335ce8d76 Maintainer: takagi Status: ready -->
 
 <book xml:id="book.yaf" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <?phpdoc extension-membership="pecl" ?>
  <title>Yet Another Framework (Yaf)</title>
  <titleabbrev>Yaf</titleabbrev>
 
@@ -11,10 +12,6 @@
   <para>
    <literal>Yet Another Framework</literal>(<acronym>Yaf</acronym>)
    拡張モジュールは PHP のフレームワークで、ウェブアプリケーションの開発に使います。
-  </para>
-  <para>
-   Yaf を使うには PHP 5.2.1 より新しいバージョンが必要です。
-   それより前のバージョンの PHP では動かないかもしれません。
   </para>
   <para>
    ちょっとした Yaf のベンチマークが <link

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 059cd189236e46776e1731808a5dc4f45254290e Maintainer: takagi Status: ready -->
+<!-- EN-Revision: bf85f2f1fcd9b63abf0bfa3675d410891c3c7b94 Maintainer: takagi Status: ready -->
 
 <refentry xml:id="streamwrapper.destruct" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
@@ -11,7 +11,7 @@
  <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-   <methodname>streamWrapper::__destruct</methodname>
+   <modifier>public</modifier> <methodname>streamWrapper::__destruct</methodname>
    <void />
   </methodsynopsis>
   <para>
@@ -25,6 +25,13 @@
  <refsect1 role="parameters">
   &reftitle.parameters;
   &no.function.parameters;
+ </refsect1>
+
+ <refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+   &return.void;
+  </para>
  </refsect1>
 
 </refentry>

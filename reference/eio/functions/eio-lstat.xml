@@ -64,7 +64,7 @@
   &reftitle.returnvalues;
   <para>
    <function>eio_lstat</function>
-   は、成功した場合にリクエストリソースを返します。エラー時に &false; を返します。
+   は、成功した場合にリクエストリソースを返します。&return.falseforfailure;
   </para>
  </refsect1>
 

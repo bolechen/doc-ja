@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 3b792d800d248236a0ff0698c74dfeab75cffc92 Maintainer: takagi Status: ready -->
+<!-- EN-Revision: 184f3f7bd45643cb80f828d0bb001991ec3a5fad Maintainer: takagi Status: ready -->
 <!-- Credits: mumumu -->
 <appendix xml:id="curl.constants" xmlns="http://docbook.org/ns/docbook">
  &reftitle.constants;
@@ -18,7 +18,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.1.0 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -29,7 +29,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.1.0 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -62,7 +62,7 @@
      </term>
      <listitem>
        <simpara>
-         PHP 5.2.0 以降で使用可能です。
+
        </simpara>
      </listitem>
    </varlistentry>
@@ -106,7 +106,7 @@
      </term>
      <listitem>
        <simpara>
-         PHP 5.2.0 以降で使用可能です。
+
        </simpara>
      </listitem>
    </varlistentry>
@@ -117,7 +117,7 @@
      </term>
      <listitem>
        <simpara>
-         PHP 5.2.0 以降で使用可能です。
+
        </simpara>
      </listitem>
    </varlistentry>
@@ -128,7 +128,7 @@
      </term>
      <listitem>
        <simpara>
-         PHP 5.2.0 以降で使用可能です。
+
        </simpara>
      </listitem>
    </varlistentry>
@@ -139,7 +139,7 @@
      </term>
      <listitem>
        <simpara>
-         PHP 5.2.0 以降で使用可能です。
+
        </simpara>
      </listitem>
    </varlistentry>
@@ -150,7 +150,7 @@
      </term>
      <listitem>
        <simpara>
-         PHP 5.2.4 以降で使用可能です。
+
        </simpara>
      </listitem>
    </varlistentry>
@@ -161,7 +161,7 @@
      </term>
      <listitem>
        <simpara>
-         PHP 5.1.0 以降で使用可能です。
+
        </simpara>
      </listitem>
    </varlistentry>
@@ -483,7 +483,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.2.1 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -505,7 +505,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.3.0 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -604,7 +604,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 以降 および cURL 7.14.1 で利用可能。
+     cURL 7.14.1 で利用可能。
     </simpara>
    </listitem>
   </varlistentry>
@@ -725,7 +725,7 @@
    </term>
    <listitem>
     <simpara>
-      PHP 5.5.19 および 5.6.3 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -736,7 +736,7 @@
    </term>
    <listitem>
     <simpara>
-      PHP 5.5.19 および 5.6.3 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -747,7 +747,7 @@
    </term>
    <listitem>
     <simpara>
-      PHP 5.5.19 および 5.6.3 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -946,17 +946,6 @@
    <listitem>
     <simpara>
      
-    </simpara>
-   </listitem>
-  </varlistentry>
-  <varlistentry xml:id="constant.curlopt-closepolicy">
-   <term>
-    <constant>CURLOPT_CLOSEPOLICY</constant>
-    (<type>int</type>)
-   </term>
-   <listitem>
-    <simpara>
-     PHP 5.6.0 で削除されました。
     </simpara>
    </listitem>
   </varlistentry>
@@ -1396,7 +1385,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.4.0 および cURL 7.15.5 以降で使用可能です。
+     cURL 7.15.5 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -1407,7 +1396,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.4.0 および cURL 7.15.5 以降で使用可能です。
+     cURL 7.15.5 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -1433,61 +1422,6 @@
     </simpara>
    </listitem>
   </varlistentry>
-  <varlistentry xml:id="constant.curlclosepolicy-least-recently-used">
-   <term>
-    <constant>CURLCLOSEPOLICY_LEAST_RECENTLY_USED</constant>
-    (<type>int</type>)
-   </term>
-   <listitem>
-    <simpara>
-     PHP 5.6.0 で削除されました。
-    </simpara>
-   </listitem>
-  </varlistentry>
-  <varlistentry xml:id="constant.curlclosepolicy-least-traffic">
-   <term>
-    <constant>CURLCLOSEPOLICY_LEAST_TRAFFIC</constant>
-    (<type>int</type>)
-   </term>
-   <listitem>
-    <simpara>
-     PHP 5.6.0 で削除されました。
-    </simpara>
-   </listitem>
-  </varlistentry>
-  <varlistentry xml:id="constant.curlclosepolicy-slowest">
-   <term>
-    <constant>CURLCLOSEPOLICY_SLOWEST</constant>
-    (<type>int</type>)
-   </term>
-   <listitem>
-    <simpara>
-     PHP 5.6.0 で削除されました。
-    </simpara>
-   </listitem>
-  </varlistentry>
-  <varlistentry xml:id="constant.curlclosepolicy-callback">
-   <term>
-    <constant>CURLCLOSEPOLICY_CALLBACK</constant>
-    (<type>int</type>)
-   </term>
-   <listitem>
-    <simpara>
-     PHP 5.6.0 で削除されました。
-    </simpara>
-   </listitem>
-  </varlistentry>
-  <varlistentry xml:id="constant.curlclosepolicy-oldest">
-   <term>
-    <constant>CURLCLOSEPOLICY_OLDEST</constant>
-    (<type>int</type>)
-   </term>
-   <listitem>
-    <simpara>
-     PHP 5.6.0 で削除されました。
-    </simpara>
-   </listitem>
-  </varlistentry>
   <varlistentry xml:id="constant.curlinfo-private">
    <term>
     <constant>CURLINFO_PRIVATE</constant>
@@ -1495,7 +1429,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.2.4 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -1517,7 +1451,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 以降 および cURL 7.10.8 で利用可能。
+     cURL 7.10.8 で利用可能。
      これは、
      <constant>CURLINFO_RESPONSE_CODE</constant> の古いエイリアスです。
     </simpara>
@@ -1530,7 +1464,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 以降 および cURL 7.10.8 で利用可能。
+     cURL 7.10.8 で利用可能。
     </simpara>
    </listitem>
   </varlistentry>
@@ -1541,7 +1475,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.1.3 以降で使用可能です。
+    
     </simpara>
    </listitem>
   </varlistentry>
@@ -1750,7 +1684,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.3.7 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -1761,7 +1695,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.4.7 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -1772,7 +1706,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.4.7 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -1783,7 +1717,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.4.7 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -1794,7 +1728,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.4.7 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -2080,7 +2014,7 @@
    <listitem>
     <simpara>
      HTTP2 のサポートを組み込みます。
-     PHP 5.5.24、PHP 5.6.8 および cURL 7.33.0 以降で使用可能です。
+     cURL 7.33.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -2092,7 +2026,7 @@
    <listitem>
     <simpara>
      2GB 以上のファイルをサポートします。
-     PHP 5.5.24、PHP 5.6.8 および cURL 7.33.0 以降で使用可能です。
+     cURL 7.33.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -2910,7 +2844,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.3.0 および cURL 7.16.1 以降で使用可能です。
+     cURL 7.16.1 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -2921,7 +2855,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.1.0 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -2932,7 +2866,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.1.0 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -2943,7 +2877,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.1.0 以降で使用可能です。
+
     </simpara>
    </listitem>
   </varlistentry>
@@ -2976,7 +2910,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.2.10 および cURL 7.10 以降で使用可能です。
+     cURL 7.10 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3075,7 +3009,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.24, 5.6.8 および cURL 7.33.0 以降で使用可能です。
+     cURL 7.33.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3240,7 +3174,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.25.0 以降で使用可能です。
+     cURL 7.25.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3251,7 +3185,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.25.0 以降で使用可能です。
+     cURL 7.25.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3273,7 +3207,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.19.1 以降で使用可能です。
+     cURL 7.19.1 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3526,7 +3460,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 以降 および cURL 7.25.0 で利用可能。
+     cURL 7.25.0 で利用可能。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3537,7 +3471,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 以降 および cURL 7.25.0 で利用可能。
+     cURL 7.25.0 で利用可能。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3548,7 +3482,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 以降 および cURL 7.25.0 で利用可能。
+     および cURL 7.25.0 で利用可能。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3559,7 +3493,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.16.0 以降で使用可能です。
+     cURL 7.16.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3570,7 +3504,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.16.3 以降で使用可能です。
+     cURL 7.16.3 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3728,19 +3662,6 @@
     </simpara>
    </listitem>
   </varlistentry>
-  <varlistentry xml:id="constant.curl-wrappers-enabled">
-   <term>
-    <constant>CURL_WRAPPERS_ENABLED</constant>
-    (<type>int</type>)
-   </term>
-   <listitem>
-    <simpara>
-     PHP の configure 時に
-     <option role="configure">--with-curlwrappers</option>
-     を指定しているかどうか。PHP 5.5.0 で PECL に移動しました。
-    </simpara>
-   </listitem>
-  </varlistentry>
   <varlistentry xml:id="constant.curlpause-all">
    <term>
     <constant>CURLPAUSE_ALL</constant>
@@ -3748,7 +3669,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.18.0 以降で使用可能です。
+     cURL 7.18.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3759,7 +3680,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.18.0 以降で使用可能です。
+     cURL 7.18.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3770,7 +3691,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.18.0 以降で使用可能です。
+     cURL 7.18.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3781,7 +3702,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.18.0 以降で使用可能です。
+     cURL 7.18.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3792,7 +3713,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.18.0 以降で使用可能です。
+     cURL 7.18.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3803,7 +3724,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.0 および cURL 7.18.0 以降で使用可能です。
+     cURL 7.18.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3814,7 +3735,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 7.0.0 および cURL 7.43.0 以降で使用可能です。
+     cURL 7.43.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3825,7 +3746,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 7.0.0 および cURL 7.43.0 以降で使用可能です。
+     cURL 7.43.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3836,7 +3757,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 7.0.0 および cURL 7.43.0 以降で使用可能です。
+     cURL 7.43.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3847,7 +3768,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.23 と PHP 5.6.7 および cURL 7.18.0 以降で使用可能です。
+     cURL 7.18.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>
@@ -3858,7 +3779,7 @@
    </term>
    <listitem>
     <simpara>
-     PHP 5.5.23 と PHP 5.6.7 および cURL 7.18.0 以降で使用可能です。
+     cURL 7.18.0 以降で使用可能です。
     </simpara>
    </listitem>
   </varlistentry>

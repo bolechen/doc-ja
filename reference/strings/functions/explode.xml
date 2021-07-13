@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 923fbe06539286e2a9261ea9982e788b4157ad48 Maintainer: hirokawa Status: ready -->
+<!-- EN-Revision: c69c20982392cd55260b9870431a029e801d52e0 Maintainer: hirokawa Status: ready -->
 <!-- CREDITS: shimooka,mumumu -->
 <refentry xml:id="function.explode" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
@@ -86,7 +86,33 @@
    <parameter>string</parameter> に含まれていない値が含まれている場合は、
    <parameter>limit</parameter> が負の値なら空の配列、そうでなければ
    引数 <parameter>string</parameter> を含む配列を返します。
+   <parameter>separator</parameter> の値が <parameter>string</parameter>
+   の最初か最後に現れた場合、その位置に応じて、
+   返される配列の最初か最後に空の配列が追加されます。
   </para>
+ </refsect1>
+
+ <refsect1 role="changelog">
+  &reftitle.changelog;
+  <informaltable>
+   <tgroup cols="2">
+    <thead>
+     <row>
+      <entry>&Version;</entry>
+      <entry>&Description;</entry>
+     </row>
+    </thead>
+    <tbody>
+     <row>
+      <entry>8.0.0</entry>
+      <entry>
+       引数 <parameter>separator</parameter> に空文字列 ("") を渡した場合、
+       <classname>ValueError</classname> をスローするようになりました。
+      </entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </informaltable>
  </refsect1>
 
  <refsect1 role="examples">
@@ -166,7 +192,7 @@ $str = 'one|two|three|four';
 // 正の値を持つ limit
 print_r(explode('|', $str, 2));
 
-// 負の値を持つ limit (PHP 5.1 以降)
+// 負の値を持つ limit
 print_r(explode('|', $str, -1));
 ?>
 ]]>

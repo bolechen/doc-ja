@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 0c9c2dd669fe9395eaa73d487fbd160f9057429a Maintainer: takagi Status: ready -->
+<!-- EN-Revision: 51aee00be4000b28ddecc0c34555d5ce3ae54d1a Maintainer: takagi Status: ready -->
 <!-- CREDITS: hirokawa,shimooka,mumumu -->
 <refentry xml:id="function.gettype" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
@@ -77,6 +77,31 @@
   </para>
  </refsect1>
  
+ <refsect1 role="changelog">
+  &reftitle.changelog;
+  <para>
+   <informaltable>
+    <tgroup cols="2">
+     <thead>
+      <row>
+       <entry>&Version;</entry>
+       <entry>&Description;</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>7.2.0</entry>
+       <entry>
+        クローズ済みのリソースを渡すと <literal>'resource (closed)'</literal>を返すようになりました。
+        以前は <literal>'unknown type'</literal>を返していました。
+       </entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+  </para>
+ </refsect1>
+
  <refsect1 role="examples">
   &reftitle.examples;
   <para>
@@ -108,36 +133,12 @@ string
    </example>
   </para>
  </refsect1>
-
-  <refsect1 role="changelog">
-  &reftitle.changelog;
-  <para>
-   <informaltable>
-    <tgroup cols="2">
-     <thead>
-      <row>
-       <entry>&Version;</entry>
-       <entry>&Description;</entry>
-      </row>
-     </thead>
-     <tbody>
-      <row>
-       <entry>7.2.0</entry>
-       <entry>
-        クローズ済みのリソースを渡すと <literal>'resource (closed)'</literal>を返すようになりました。
-        以前は <literal>'unknown type'</literal>を返していました。
-       </entry>
-      </row>
-     </tbody>
-    </tgroup>
-   </informaltable>
-  </para>
- </refsect1>
  
  <refsect1 role="seealso">
   &reftitle.seealso;
   <para>
    <simplelist>
+    <member><function>get_debug_type</function></member>
     <member><function>settype</function></member>
     <member><function>get_class</function></member>
     <member><function>is_array</function></member>

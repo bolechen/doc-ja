@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 3fe818fe95c23bc705b902363a62ac3763a7cc7c Maintainer: takagi Status: ready -->
+<!-- EN-Revision: 68c2c871505aadf983f16113c5b077b335ce8d76 Maintainer: takagi Status: ready -->
 
 <book xml:id="book.json" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
- <?phpdoc extension-membership="bundled" ?>
+ <?phpdoc extension-membership="core" ?>
  <title>JavaScript Object Notation</title>
  <titleabbrev>JSON</titleabbrev>
 
@@ -12,10 +12,9 @@
   <para>
    この拡張モジュールは、<link
     xlink:href="&url.json;">JavaScript Object Notation (JSON)</link>
-   というデータ交換形式を実装したものです。PHP 5 のデコード処理は、
-   Douglas Crockford による JSON_checker を基にしています。
-   PHP 7 では、完全に新しく、改良された JSON パーサが同梱されています。
-   これは PHP のためだけに特別に書かれ、PHPライセンスのもとでライセンスされています。
+   というデータ交換形式を実装したものです。
+   PHP には、PHP のためだけに特別に書かれた JSON パーサが同梱されており、
+   PHPライセンスのもとでライセンスされています。
   </para>
   &json.implementation.superset;
  </preface>

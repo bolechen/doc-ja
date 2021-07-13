@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 46efcedd4ab2dee962eb80c7fbd552252581225b Maintainer: hirokawa Status: ready -->
+<!-- EN-Revision: 14cd35a23dab08e3405277d90358853c6312df1f Maintainer: hirokawa Status: ready -->
 <!-- CREDITS: takagi,mumumu -->
 
 <chapter xml:id="language.exceptions" xmlns="http://docbook.org/ns/docbook">
@@ -18,7 +18,7 @@
    <programlisting role="php">
 <![CDATA[
 <?php
-class Exception extends Throwable
+class Exception implements Throwable
 {
     protected $message = 'Unknown exception';   // exception message
     private   $string;                          // __toString cache
@@ -28,7 +28,7 @@ class Exception extends Throwable
     private   $trace;                           // backtrace
     private   $previous;                        // previous exception if nested exception
 
-    public function __construct($message = null, $code = 0, Throwable $previous = null);
+    public function __construct($message = '', $code = 0, Throwable $previous = null);
 
     final private function __clone();           // Inhibits cloning of exceptions.
 
@@ -230,7 +230,7 @@ echo "\n\n";
    </para>
    <para>
     さまざまな型の例外を捕捉するために
-    複数の &catch; フロックを使用することができます。
+    複数の &catch; ブロックを使用することができます。
     通常の実行時 (&try; ブロック内で例外が投げられなかった
     場合) は、&catch;
     ブロック内は処理されず、それ以降から処理が続けられます。
@@ -250,7 +250,7 @@ echo "\n\n";
    <para>
     PHP 7.1.0 以降では、&catch; ブロック で 複数の例外を 
     パイプ文字 (<literal>|</literal>) を使って指定できるようになりました。
-    これは、異なるクラス改装からの例外を同時に扱う必要がある場合に有用です。
+    これは、異なるクラス階層からの例外を同時に扱う必要がある場合に有用です。
    </para>
    <para>
     PHP 8.0.0 以降では、キャッチされた例外に対応する変数はオプションになりました。
@@ -274,7 +274,7 @@ echo "\n\n";
     &finally; ブロックも指定できます。
     &finally; ブロックの何かに書いたコードは、
     &try; および &catch; ブロックの後で常に実行されます。
-    例外がスローさされたかどうかには関係ありません。
+    例外がスローされたかどうかは関係ありません。
    </para>
   </simplesect>
 

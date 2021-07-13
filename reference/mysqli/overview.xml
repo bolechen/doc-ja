@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Revision$ -->
+<!-- EN-Revision: 40667918dcff1d5c9f7ecdc88b5caca24ba0686c Maintainer: mumumu Status: ready -->
+<chapter xml:id="mysqli.overview" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <title>mysqli の概要</title>
+
+  <para>
+    このセクションでは、 PHP アプリケーションの開発で MySQL データベースを扱うときの選択肢について説明します。 
+  </para>
+
+  <para>
+    <emphasis role="bold">API って何?</emphasis>
+  </para>
+
+  <para>
+    API は Application Programming Interface の略で、 何らかのタスクを実行するためにアプリケーションから呼び出す必要のある クラスやメソッド、関数、変数などを定義したものです。 データベースとの通信を必要とする PHP アプリケーションが使うための API は、 通常は PHP の拡張モジュールとして公開されています。 
+  </para>
+
+  <para>
+    API は手続き型にすることもできるし、 オブジェクト指向型にすることもできます。 手続き型の API の場合は何かの処理を実行するための関数を呼ぶことになり、 オブジェクト指向型の API の場合はクラスのインスタンスを作ってそのメソッドを呼ぶことになります。 通常は、後者の方法をおすすめします。 後者のほうがよりモダンであり、 きっちりとしたコードを書けるからです。 
+  </para>
+
+  <para>
+    MySQL サーバーとの接続が必要な PHP アプリケーションを書く場合に 使える API はいくつかあって、その中から選べます。 このドキュメントでは、 どんな API が使えてどれを選ぶのが最適なのかを解説します。 
+  </para>
+
+  <para>
+    <emphasis role="bold">コネクタとは?</emphasis>
+  </para>
+
+  <para>
+    MySQL のドキュメントで使われている <emphasis>コネクタ</emphasis> という用語は、 何かのアプリケーションから MySQL データベースサーバーに接続するためのソフトウェアのことを指します。 MySQL はさまざまな言語用のコネクタを提供しており、 PHP もその中に含まれます。 
+  </para>
+
+  <para>
+    PHP のアプリケーションで、 データベースサーバーとの通信が必要になったときには、 データベースサーバーへの接続やデータベースへの問い合わせなどの関数を呼ぶ PHP コードを書くことになるでしょう。 つまり、PHP アプリケーションから使える API を提供するソフトウェアが必要になるということです。 そのソフトウェアは、 アプリケーションとデータベースサーバーの間の通信も処理しないといけません。 おそらくは中間ライブラリも利用することになるでしょう。 このソフトウェアのことを一般的にコネクタと呼びます。 というのも、 このソフトウェアのおかげで アプリケーションがデータベースサーバーに 接続 (<emphasis>connect</emphasis>) できるようになるからです。 
+  </para>
+
+  <para>
+    <emphasis role="bold">ドライバとは?</emphasis>
+  </para>
+
+  <para>
+    ドライバとは、 特定のデータベースサーバーとの通信をするために作られたソフトウェアのことです。 ドライバはライブラリと呼ばれることもあり、 MySQL Client Library や MySQL Native ドライバ というように使われます。 これらのライブラリが実装するのは低レベルのプロトコルで、 これを使って MySQL データベースサーバーと通信します。 
+  </para>
+
+  <para>
+    例を挙げると、データベース抽象化レイヤーの <link linkend="mysqli.overview.pdo">PHP Data Objects (PDO)</link> は各データベース専用のドライバの中からひとつを選んで使います。 数あるドライバの中のひとつに PDO MYSQL ドライバがあり、 これが MySQL サーバーとのインターフェイスとなります。 
+  </para>
+
+  <para>
+    人によっては、コネクタとドライバを混同して使うこともあって、 混乱の元となります。 MySQL 関連のドキュメントでは、<quote>ドライバ</quote> という用語は、 コネクタパッケージのうち、 データベース固有の機能を提供するソフトウェアという意味で 予約されています。 
+  </para>
+
+  <para>
+    <emphasis role="bold">拡張モジュールとは?</emphasis>
+  </para>
+
+  <para>
+    PHP のドキュメントを読んでいると、<emphasis>拡張モジュール</emphasis> という用語がよく出てきます。 PHP のコードには、コア機能とは別に オプションの拡張モジュールが用意されています。 PHP で使える MySQL 関連の拡張モジュールには mysqli や PDO MySQL があり、 PHP の拡張モジュール用フレームワークを使って実装されています。 
+  </para>
+
+  <para>
+    拡張モジュールは一般的に PHP プログラマー向けの API を公開しており、 その機能をプログラムから使えるようになっています。 しかし、PHP 拡張モジュールフレームワークを使って書かれた拡張モジュールの中には、 PHP プログラマー向けの API を公開していないものもあります。 
+  </para>
+
+  <para>
+     たとえば PDO MySQL ドライバは PHP の拡張モジュールですが、 それ自体は PHP プログラマー向けの API を公開していません。 さらに上位にある PDO レイヤーへのインターフェイスを提供しているだけです。 
+  </para>
+
+  <para>
+    API と拡張モジュールとは同じ意味ではありません。 拡張モジュールが必ずしもプログラマー向けの API を公開しているとは限らないからです。 
+  </para>
+
+  <para>
+    <emphasis role="bold">
+    MySQL を使うために、提供されている主要な PHP API は何ですか?
+    </emphasis>
+  </para>
+
+  <para>
+    MySQL データベースサーバに接続することを検討する際、
+    ふたつの主要な選択肢があります:
+  </para>
+
+  <itemizedlist>
+
+    <listitem>
+      <para>
+        PHP の mysqli 拡張モジュール
+      </para>
+    </listitem>
+
+    <listitem>
+      <para>
+        PHP Data Objects (PDO)
+      </para>
+    </listitem>
+
+  </itemizedlist>
+
+  <para>
+    それぞれ、長所と短所があります。
+    以下の説明で、それぞれの API の重要な側面を簡単に説明していきます。
+  </para>
+
+  <para>
+    <emphasis role="bold">
+      PHP の mysqli 拡張モジュールとは何ですか?
+    </emphasis>
+  </para>
+
+  <para>
+    <literal>mysqli</literal> 拡張モジュール、
+    もしくは <emphasis>改良版</emphasis>
+    MySQL 拡張モジュールとしても知られているものは、
+    MySQL のバージョン 4.1.3 以降の新機能を利用するために開発されました。
+    <literal>mysqli</literal> 拡張モジュールは、
+    PHP 5 以降にバンドルされています。
+  </para>
+
+  <para>
+    <literal>mysqli</literal> 拡張モジュールにはたくさんの利点がありますが、
+    <literal>mysql</literal> 拡張モジュールに対する、
+    主な改良点は下記のとおりです:
+
+    <itemizedlist>
+
+      <listitem>
+        <para>
+          オブジェクト指向インターフェイス
+        </para>
+      </listitem>
+
+      <listitem>
+        <para>
+          プリペアドステートメントのサポート
+        </para>
+      </listitem>
+
+      <listitem>
+        <para>
+          複数のステートメント実行をサポート
+        </para>
+      </listitem>
+
+      <listitem>
+        <para>
+          トランザクションのサポート
+        </para>
+      </listitem>
+
+      <listitem>
+        <para>
+          強化されたデバッグ機能
+        </para>
+      </listitem>
+
+    </itemizedlist>
+  </para>
+
+  <para>
+    オブジェクト志向インターフェイスと同時に、
+    手続き型のインターフェイスも提供されています。
+  </para>
+
+  <para>
+    <literal>mysqli</literal> 拡張モジュールは、
+    PHP の拡張モジュール用フレームワークを使って実装されています。
+    ソースコードは <filename>ext/mysqli</filename> 以下にあります。
+  </para>
+
+  <para>
+    <literal>mysqli</literal> 拡張モジュールについての詳細は、
+    <xref linkend="book.mysqli"/> を参照下さい。
+  </para>
+
+  <para xml:id="mysqli.overview.pdo">
+    <emphasis role="bold">PDO とは何ですか?</emphasis>
+  </para>
+
+  <para>
+    PHP Data Objects, または PDO
+    は、PHP アプリケーションのための、特別なデータベース抽象化レイヤです。
+    PDO は、あなたのアプリケーションが接続するデータベースサーバに関係なく、
+    一貫した API を提供します。
+    理屈の上では、PDO の API を使えば、
+    たとえば Firebird から MySQL
+    にデータベースサーバを切り替えることができます。
+    PHP コードに必要な変更は少なく済むでしょう。
+  </para>
+
+  <para>
+    データベース抽象化レイヤのその他の例としては、
+    Java の JDBC や、Perl の DBI が挙げられます。
+  </para>
+
+  <para>
+    PDO には、綺麗で、簡潔で、
+    移植可能な API であるという利点がある一方で、
+    最新の MySQL サーバで利用可能な高度な機能を全て利用できるとは限らない、
+    という重要な欠点があります。
+    たとえば、PDO は MySQL がサポートしている
+    複数ステートメントの実行を許可していません。
+  </para>
+
+  <para>
+    PDO は、PHP の拡張モジュール用フレームワークを使って実装されています。
+    ソースコードは <filename>ext/pdo</filename> 以下にあります。
+  </para>
+
+  <para>
+    PDO についての詳細は、
+    <xref linkend="book.pdo"/> を参照下さい。
+  </para>
+
+  <para>
+    <emphasis role="bold">PDO MYSQL ドライバ とは何ですか?</emphasis>
+  </para>
+
+  <para>
+    PDO MySQL ドライバ 自体は、
+    少なくとも PHP プログラマから見ると API ではありません。
+    実際には、
+    PDO MySQL ドライバ は PDO の直下のレイヤにあって、
+    MySQL 特有の機能を提供しているものです。
+    プログラマは、PDO の API を呼ぶことは変わりませんが、
+    PDO は MySQL サーバーと通信するために、
+    PDO MySQL ドライバを使うのです。
+  </para>
+
+  <para>
+    PDO MySQL ドライバは、
+    数ある PDO ドライバのうち、利用できるもののひとつです。
+    他の PDO ドライバとして、Firebird と PostgreSQL
+    データベースサーバのものが含まれています。
+  </para>
+
+  <para>
+    PDO MySQL ドライバは、
+    PHP の拡張モジュール用フレームワークを使って実装されています。
+    ソースコードは <filename>ext/pdo_mysql</filename> 以下にありますが、
+    その API は PHP プログラマには公開されていません。
+  </para>
+
+  <para>
+    PDO MySQL ドライバについての詳細は、
+    <xref linkend="ref.pdo-mysql"/> を参照下さい。
+  </para>
+
+  <para xml:id="mysqli.overview.mysqlnd">
+    <emphasis role="bold">PHP の MySQL Native ドライバとは何ですか?</emphasis>
+  </para>
+
+  <para>
+    MySQL データベースサーバと通信するために、
+    <literal>mysqli</literal>
+    と PDO MySQL ドライバは、
+    それぞれ必須のプロトコルを実装している低レベルのライブラリを使っています。
+    かつては、その低レベルのライブラリとして利用可能だったのは、
+    <literal>libmysqlclient</literal>
+    とも呼ばれている MySQL Client Library だけでした。
+  </para>
+
+  <para>
+    しかし、
+    <literal>libmysqlclient</literal>
+    が提供していたインターフェイスは、
+    PHP アプリケーションとの通信に最適化されていませんでした。
+    なぜなら、<literal>libmysqlclient</literal>
+    は、C言語 で書かれたアプリケーションを念頭に置いていたからです。
+    このため、PHP アプリケーションのための代替として、
+    <literal>libmysqlclient</literal> の代わりに、
+    MySQL Native ドライバ、<literal>mysqlnd</literal> が開発されたのです。
+  </para>
+
+  <para>
+    <literal>mysqli</literal> 拡張モジュール
+    と PDO MySQL ドライバはそれぞれ、
+    <literal>libmysqlclient</literal> や
+    <literal>mysqlnd</literal> のいずれかを使って個別に設定できます。
+    <literal>mysqlnd</literal> は、
+    PHP システムと統合するために特別に設計されているため、
+    <literal>libmysqlclient</literal> と比較して、
+    大幅な省メモリ化や高速化が実現されています。
+    これらの改善を利用することを強くお勧めします。
+  </para>
+
+  <para>
+    MySQL Native ドライバ は、
+    PHP 拡張モジュール用フレームワークを使って実装されています。
+    ソースコードは <filename>ext/mysqlnd</filename> 以下にありますが、
+    その API は PHP プログラマには公開されていません。
+  </para>
+
+<!-- TODO
+  <para>
+    For further information on the MySQL Native Driver, see
+    <xref linkend="book.mysqlnd"/>.
+  </para>
+-->
+
+  <para>
+    <emphasis role="bold">機能の比較</emphasis>
+  </para>
+
+  <para>
+    以下の表は、PHP から MySQL に接続する主要な方法に関する、
+    機能の比較を示しています:
+  </para>
+
+  <table xml:id="mysqli.overview.option.comparison">
+   <title>PHP 向けの MySQL API の選択肢の比較</title>
+    <tgroup cols="3">
+      <colspec colwidth="34*"/>
+      <colspec colwidth="33*"/>
+      <colspec colwidth="33*"/>
+      <thead>
+        <row>
+          <entry></entry>
+          <entry>PHP の mysqli 拡張モジュール</entry>
+          <entry>PDO (PDO MySQL ドライバ と MySQL Native ドライバ を利用)</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>PHP で実装されたバージョン</entry>
+          <entry>5.0</entry>
+          <entry>5.0</entry>
+        </row>
+        <row>
+          <entry>MySQL での開発状況</entry>
+          <entry>アクティブ</entry>
+          <entry>アクティブ</entry>
+        </row>
+        <row>
+          <entry>文字セットに関するAPI のサポート</entry>
+          <entry>Yes</entry>
+          <entry>Yes</entry>
+        </row>
+        <row>
+          <entry>サーバ側でのプリペアドステートメントの API サポート</entry>
+          <entry>Yes</entry>
+          <entry>Yes</entry>
+        </row>
+        <row>
+          <entry>クライアントサイドでのプリペアドステートメントの API サポート</entry>
+          <entry>No</entry>
+          <entry>Yes</entry>
+        </row>
+        <row>
+          <entry>ストアドプロシージャの API のサポート</entry>
+          <entry>Yes</entry>
+          <entry>Yes</entry>
+        </row>
+        <row>
+          <entry>複数ステートメントの API のサポート</entry>
+          <entry>Yes</entry>
+          <entry>Most</entry>
+        </row>
+        <row>
+          <entry>MySQL 4.1以降の機能を全てサポートしているか</entry>
+          <entry>Yes</entry>
+          <entry>Most</entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </table>
+<!--
+  <para>
+    <emphasis role="bold">Further information</emphasis>
+  </para>
+
+  <para>
+    The PHP distribution and documentation are available from the
+    <link xlink:href="http://www.php.net/">PHP Web site</link>.
+  </para>
+-->
+</chapter>

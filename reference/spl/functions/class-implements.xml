@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: e41806c30bf6975e452c0d4ce35ab0984c2fa68c Maintainer: shimooka Status: ready -->
+<!-- EN-Revision: 04df229c536daf299b51e16479f017ac68556038 Maintainer: shimooka Status: ready -->
 <!-- Credits: mumumu -->
 <refentry xml:id="function.class-implements" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
@@ -39,9 +39,7 @@
      <term><parameter>autoload</parameter></term>
      <listitem>
       <para>
-       <function>__autoload</function>
-       マジックメソッドを通じて、
-       この関数にクラスを自動的にロードさせるかどうかを指定します。
+       デフォルトで &link.autoload; をコールするかしないか。
       </para>
      </listitem>
     </varlistentry>
@@ -71,15 +69,12 @@ class bar implements foo {}
 
 print_r(class_implements(new bar));
 
-// PHP 5.1.0 以降、パラメータを文字列として指定しても良い
+// パラメータを文字列として指定しても良い
 print_r(class_implements('bar'));
 
+spl_autoload_register();
 
-function __autoload($class_name) {
-   require_once $class_name . '.php';
-}
-
-// 'not_loaded' クラスをロードするために __autoload を使用する
+// 'not_loaded' クラスをロードするためにオートローディングを使用する
 print_r(class_implements('not_loaded', true));
 
 ?>
@@ -92,7 +87,10 @@ Array
 (
     [foo] => foo
 )
-
+Array
+(
+    [foo] => foo
+)
 Array
 (
     [interface_of_not_loaded] => interface_of_not_loaded

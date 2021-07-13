@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 16a1bdfd1c36108534b5af08dc4b751c7ac0fdaf Maintainer: hirokawa Status: ready -->
+<!-- EN-Revision: 5a945dfef09a9595c83855cdb858ffa4a96af305 Maintainer: hirokawa Status: ready -->
 <!-- CREDITS: takagi,mumumu -->
 
  <chapter xml:id="language.constants" xmlns="http://docbook.org/ns/docbook">
   <title>定数</title>
 
   <simpara>
-   定数は簡単な値のためのID(名前)です。この名前が示すように、定数の値は
+   定数は、値のためのID(名前)です。この名前が示すように、定数の値は
    スクリプト実行中に変更できません (<link 
-   linkend="language.constants.predefined">自動的に定義される定数</link>
-   は例外で、これらは実際は定数ではありません)。
+   linkend="language.constants.magic">マジック定数</link>
+   は例外です。これは実際は定数ではありません)。
    定数は大文字小文字を区別します。慣習的に、
    定数は常に大文字で表記されます。
   </simpara>
@@ -32,7 +32,7 @@
   <para>
    <function>define</function> 関数を使うと、
    予約語や有効でない名前の定数を定義することが可能です。
-   この場合の定数の値は constant() 関数によってのみ取得できますが、
+   この場合の定数の値は <function>constant</function> 関数によってのみ取得できますが、
    このような使い方は推奨できません。
   </para>
 
@@ -322,7 +322,7 @@ echo ANIMALS[1]; // 出力は "cat"
        <row xml:id="constant.trait">
         <entry><constant>__TRAIT__</constant></entry>
         <entry>
-         トレイト名
+         トレイト名。
          トレイト名には、宣言された名前空間も含みます
          (例 <literal>Foo\Bar</literal>)。
         </entry>

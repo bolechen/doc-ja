@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 7f569e1f175adf1fbd0e462eba8d6bc82214c939 Maintainer: takagi Status: ready -->
+<!-- EN-Revision: a9eb4bc1a9ff7f3f6ed30cf40e063ce103dcf318 Maintainer: takagi Status: ready -->
 <!-- CREDITS: shimooka,mumumu -->
 <refentry xml:id="function.spl-autoload-register" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
@@ -46,6 +46,10 @@
        パラメータが指定されなかった場合は、デフォルト実装である
        <function>spl_autoload</function> が登録されます。
       </para>
+      <methodsynopsis>
+       <type>void</type><methodname><replaceable>callback</replaceable></methodname>
+       <methodparam><type>string</type><parameter>class_name</parameter></methodparam>
+      </methodsynopsis>
      </listitem>
     </varlistentry>
     <varlistentry>
@@ -98,7 +102,7 @@ function my_autoloader($class) {
 
 spl_autoload_register('my_autoloader');
 
-// あるいは、PHP 5.3.0 以降なら無名関数を使えます
+// あるいは、無名関数も使えます
 spl_autoload_register(function ($class) {
     include 'classes/' . $class . '.class.php';
 });
@@ -121,7 +125,7 @@ class Foo {
     }
 }
 
-spl_autoload_register(__NAMESPACE__ .'\Foo::test'); // PHP 5.3.0 以降
+spl_autoload_register(__NAMESPACE__ .'\Foo::test');
 
 new InexistentClass;
 

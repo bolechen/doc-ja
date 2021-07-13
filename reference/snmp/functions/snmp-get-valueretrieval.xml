@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: 14af302c9c0e561fa6f9cdd956268758ba9a89c5 Maintainer: takagi Status: ready -->
+<!-- EN-Revision: 64bab6321fe7aec300303dcedfddfcb31fb053c2 Maintainer: takagi Status: ready -->
 <refentry xml:id="function.snmp-get-valueretrieval" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>snmp_get_valueretrieval</refname>
@@ -17,6 +17,11 @@
    <void/>
   </methodsynopsis>
  </refsect1>
+
+ <refsect1 role="parameters">
+  &reftitle.parameters;
+  &no.function.parameters;
+ </refsect1>
  
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
@@ -31,7 +36,7 @@
   &reftitle.examples;
   <para>
    <example>
-    <title>snmp_get_valueretrieval の使用法</title>
+    <title><function>snmp_get_valueretrieval</function> の使用法</title>
     <programlisting role="php">
 <![CDATA[
 <?php
